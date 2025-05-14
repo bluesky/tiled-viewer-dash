@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Tiled } from 'bluesky-web';
+import 'bluesky-web/style.css';
 
 /**
  * ExampleComponent is an example component.
@@ -9,29 +11,39 @@ import PropTypes from 'prop-types';
  * which is editable by the user.
  */
 const TiledViewer = (props) => {
-    const {id, label, setProps, value} = props;
+    const {
+        id,
+        backgroundClassName,
+        closeOnSelect,
+        contentClassName,
+        enableStartupScreen,
+        isPopup,
+        singleColumnMode,
+        tiledBaseUrl,
+        size,
+        setProps
+    } = props;
 
-    const handleInputChange = (e) => {
-        /*
-        * Send the new value to the parent component.
-        * setProps is a prop that is automatically supplied
-        * by dash's front-end ("dash-renderer").
-        * In a Dash app, this will update the component's
-        * props and send the data back to the Python Dash
-        * app server if a callback uses the modified prop as
-        * Input or State.
-        */
-        setProps({ value: e.target.value });
+    const handleSelectCallback = (selectedLinks) => {
+        if (setProps) {
+            setProps({ selectedLinks });
+        }
     };
 
+
     return (
-        <div id={id}>
-            ExampleComponent: {label}&nbsp;
-            <input
-                value={value}
-                onChange={handleInputChange}
+            <Tiled
+                id={id}
+                backgroundClassName={backgroundClassName}
+                closeOnSelect={closeOnSelect}
+                contentClassName={contentClassName}
+                enableStartupScreen={enableStartupScreen}
+                isPopup={isPopup}
+                onSelectCallback={handleSelectCallback}
+                singleColumnMode={singleColumnMode}
+                tiledBaseUrl={tiledBaseUrl}
+                size={size}
             />
-        </div>
     );
 }
 
@@ -44,20 +56,45 @@ TiledViewer.propTypes = {
     id: PropTypes.string,
 
     /**
-     * A label that will be printed when this component is rendered.
+     * The class name for the background.
      */
-    label: PropTypes.string.isRequired,
-
+    backgroundClassName: PropTypes.string,
     /**
-     * The value displayed in the input.
+     * Whether to close the viewer on select.
      */
-    value: PropTypes.string,
-
+    closeOnSelect: PropTypes.bool,
     /**
-     * Dash-assigned callback that should be called to report property changes
-     * to Dash, to make them available for callbacks.
+     * The class name for the content.
      */
-    setProps: PropTypes.func
+    contentClassName: PropTypes.string,
+    /**
+     * Whether to enable the startup screen.
+     */
+    enableStartupScreen: PropTypes.bool,
+    /**
+     * Whether the viewer is a popup.
+     */
+    isPopup: PropTypes.bool,
+    /**
+     * The content sent into the callback function from Tiled.
+     */
+    selectedLinks: PropTypes.any,
+    /**
+     * The callback function to call on select.
+     */
+    setProps: PropTypes.func,
+    /**
+     * Whether to use single column mode.
+     */
+    singleColumnMode: PropTypes.bool,
+    /**
+     * The base URL for the tiled viewer.
+     */
+    tiledBaseUrl: PropTypes.string,
+    /**
+     * The size of the viewer. 'small', 'medium', 'large'
+     */
+    size: PropTypes.string,
 };
 
 export default TiledViewer;

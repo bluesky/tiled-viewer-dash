@@ -6,16 +6,14 @@ app = Dash(__name__)
 app.layout = html.Div([
     tiled_viewer.TiledViewer(
         id='input',
-        value='my-value',
-        label='my-label'
     ),
     html.Div(id='output')
 ])
 
 
-@callback(Output('output', 'children'), Input('input', 'value'))
-def display_output(value):
-    return 'You have entered {}'.format(value)
+@callback(Output('output', 'children'), Input('input', 'selectedLinks'))
+def display_output(links):
+    return f"Selected: {links}"
 
 
 if __name__ == '__main__':

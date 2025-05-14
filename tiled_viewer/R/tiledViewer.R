@@ -1,9 +1,9 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 #' @export
-tiledViewer <- function(id=NULL, label=NULL, value=NULL) {
+tiledViewer <- function(id=NULL, backgroundClassName=NULL, closeOnSelect=NULL, contentClassName=NULL, enableStartupScreen=NULL, isPopup=NULL, selectedLinks=NULL, singleColumnMode=NULL, size=NULL, tiledBaseUrl=NULL) {
     
-    props <- list(id=id, label=label, value=value)
+    props <- list(id=id, backgroundClassName=backgroundClassName, closeOnSelect=closeOnSelect, contentClassName=contentClassName, enableStartupScreen=enableStartupScreen, isPopup=isPopup, selectedLinks=selectedLinks, singleColumnMode=singleColumnMode, size=size, tiledBaseUrl=tiledBaseUrl)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -11,7 +11,7 @@ tiledViewer <- function(id=NULL, label=NULL, value=NULL) {
         props = props,
         type = 'TiledViewer',
         namespace = 'tiled_viewer',
-        propNames = c('id', 'label', 'value'),
+        propNames = c('id', 'backgroundClassName', 'closeOnSelect', 'contentClassName', 'enableStartupScreen', 'isPopup', 'selectedLinks', 'singleColumnMode', 'size', 'tiledBaseUrl'),
         package = 'tiledViewer'
         )
 

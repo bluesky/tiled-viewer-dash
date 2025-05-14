@@ -1,21 +1,6 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-import typing  # noqa: F401
-from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
-
-ComponentType = typing.Union[
-    str,
-    int,
-    float,
-    Component,
-    None,
-    typing.Sequence[typing.Union[str, int, float, Component, None]],
-]
-
-NumberType = typing.Union[
-    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
-]
 
 
 class TiledViewer(Component):
@@ -31,38 +16,45 @@ Keyword arguments:
 - id (string; optional):
     The ID used to identify this component in Dash callbacks.
 
-- label (string; required):
-    A label that will be printed when this component is rendered.
+- backgroundClassName (string; optional):
+    The class name for the background.
 
-- value (string; optional):
-    The value displayed in the input."""
+- closeOnSelect (boolean; optional):
+    Whether to close the viewer on select.
+
+- contentClassName (string; optional):
+    The class name for the content.
+
+- enableStartupScreen (boolean; optional):
+    Whether to enable the startup screen.
+
+- isPopup (boolean; optional):
+    Whether the viewer is a popup.
+
+- selectedLinks (boolean | number | string | dict | list; optional):
+    The content sent into the callback function from Tiled.
+
+- singleColumnMode (boolean; optional):
+    Whether to use single column mode.
+
+- size (string; optional):
+    The size of the viewer. 'small', 'medium', 'large'.
+
+- tiledBaseUrl (string; optional):
+    The base URL for the tiled viewer."""
     _children_props = []
     _base_nodes = ['children']
     _namespace = 'tiled_viewer'
     _type = 'TiledViewer'
-
-
-    def __init__(
-        self,
-        id: typing.Optional[typing.Union[str, dict]] = None,
-        label: typing.Optional[str] = None,
-        value: typing.Optional[str] = None,
-        **kwargs
-    ):
-        self._prop_names = ['id', 'label', 'value']
+    @_explicitize_args
+    def __init__(self, id=Component.UNDEFINED, backgroundClassName=Component.UNDEFINED, closeOnSelect=Component.UNDEFINED, contentClassName=Component.UNDEFINED, enableStartupScreen=Component.UNDEFINED, isPopup=Component.UNDEFINED, selectedLinks=Component.UNDEFINED, singleColumnMode=Component.UNDEFINED, tiledBaseUrl=Component.UNDEFINED, size=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'backgroundClassName', 'closeOnSelect', 'contentClassName', 'enableStartupScreen', 'isPopup', 'selectedLinks', 'singleColumnMode', 'size', 'tiledBaseUrl']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'label', 'value']
+        self.available_properties = ['id', 'backgroundClassName', 'closeOnSelect', 'contentClassName', 'enableStartupScreen', 'isPopup', 'selectedLinks', 'singleColumnMode', 'size', 'tiledBaseUrl']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
         args = {k: _locals[k] for k in _explicit_args}
 
-        for k in ['label']:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
-
         super(TiledViewer, self).__init__(**args)
-
-setattr(TiledViewer, "__init__", _explicitize_args(TiledViewer.__init__))
