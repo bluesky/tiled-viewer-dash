@@ -2,7 +2,7 @@
   "name": "tiled_viewer",
   "version": "0.0.1",
   "description": "A viewer tool for Bluesky Tiled servers",
-  "repository": {
+"repository": {
     "type": "git",
     "url": "git://github.com/als-computing/tiled-viewer.git"
   },
@@ -47,7 +47,6 @@
     "react-dom": "^16.8.6",
     "style-loader": "^3.3.3",
     "styled-jsx": "^3.2.1",
-    "tailwindcss": "^3.4.17",
     "webpack": "^5.84.1",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0"

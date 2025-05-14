@@ -1,6 +1,4 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-export(TestInput)
 export(TiledViewer)
-export(testInput)
 export(tiledViewer)

@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import TestInput from './TestInput.react';
-
-import '../../output.css';
 
 /**
  * ExampleComponent is an example component.
@@ -34,8 +31,6 @@ const TiledViewer = (props) => {
                 value={value}
                 onChange={handleInputChange}
             />
-            <TestInput />
-
         </div>
     );
 }

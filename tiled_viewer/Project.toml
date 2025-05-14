@@ -1,6 +1,6 @@
 
 name = "TiledViewer"
-uuid = "1b08a953-4be3-4667-9a23-b57657d52551"
+uuid = "1b08a953-4be3-4667-9a23-1ad5b03d9761"
 authors = ["Seij De Leon <seijdeleon@lbl.gov>"]
 version = "0.0.1"
 

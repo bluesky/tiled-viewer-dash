@@ -79,7 +79,7 @@ _js_dist.extend(
     ]
 )
 
-_css_dist = ['./src/lib/output.css']
+_css_dist = []
 
 
 for _component in __all__:

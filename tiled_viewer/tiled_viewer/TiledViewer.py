@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class TiledViewer(Component):
@@ -25,8 +40,15 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'tiled_viewer'
     _type = 'TiledViewer'
-    @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, label=Component.REQUIRED, value=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        label: typing.Optional[str] = None,
+        value: typing.Optional[str] = None,
+        **kwargs
+    ):
         self._prop_names = ['id', 'label', 'value']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'label', 'value']
@@ -42,3 +64,5 @@ Keyword arguments:
                     'Required argument `' + k + '` was not specified.')
 
         super(TiledViewer, self).__init__(**args)
+
+setattr(TiledViewer, "__init__", _explicitize_args(TiledViewer.__init__))

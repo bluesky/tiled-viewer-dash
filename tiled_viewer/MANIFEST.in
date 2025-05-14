@@ -9,4 +9,3 @@ include tiled_viewer/package-info.json
 include README.md
 include LICENSE
 include package.json
-include tiled_viewer/src/lib/output.css
