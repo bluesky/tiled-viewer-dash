@@ -21,6 +21,7 @@ const TiledViewer = (props) => {
         singleColumnMode,
         tiledBaseUrl,
         size,
+        isFullWidth,
         setProps
     } = props;
 
@@ -43,6 +44,7 @@ const TiledViewer = (props) => {
                 singleColumnMode={singleColumnMode}
                 tiledBaseUrl={tiledBaseUrl}
                 size={size}
+                isFullWidth={isFullWidth}
             />
     );
 }
@@ -95,6 +97,10 @@ TiledViewer.propTypes = {
      * The size of the viewer. 'small', 'medium', 'large'
      */
     size: PropTypes.string,
+    /**
+     * Whether to use full width of the parent element.
+     */
+    isFullWidth: PropTypes.bool,
 };
 
 export default TiledViewer;

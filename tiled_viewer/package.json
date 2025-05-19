@@ -1,6 +1,6 @@
 {
   "name": "tiled_viewer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A viewer tool for Bluesky Tiled servers",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   "author": "Seij De Leon <seijdeleon@lbl.gov>",
   "license": "BSD",
   "dependencies": {
-    "bluesky-web": "^0.2.18",
+    "bluesky-web": "^0.2.19",
     "ramda": "^0.26.1"
   },
   "devDependencies": {
