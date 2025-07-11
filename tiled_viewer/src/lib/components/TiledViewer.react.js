@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Tiled } from 'bluesky-web';
-import 'bluesky-web/style.css';
-
+// import { Tiled } from 'bluesky-web';
+// import 'bluesky-web/style.css';
+import { Tiled } from '@blueskyproject/finch';
+import '@blueskyproject/finch/style.css';
 /**
  * ExampleComponent is an example component.
  * It takes a property, `label`, and
@@ -15,6 +16,10 @@ const TiledViewer = (props) => {
         id,
         backgroundClassName,
         closeOnSelect,
+        apiKey,
+        bearerToken,
+        isButtonMode,
+        buttonModeText,
         contentClassName,
         enableStartupScreen,
         isPopup,
@@ -37,6 +42,10 @@ const TiledViewer = (props) => {
                 id={id}
                 backgroundClassName={backgroundClassName}
                 closeOnSelect={closeOnSelect}
+                apiKey={apiKey}
+                bearerToken={bearerToken}
+                isButtonMode={isButtonMode}
+                buttonModeText={buttonModeText}
                 contentClassName={contentClassName}
                 enableStartupScreen={enableStartupScreen}
                 isPopup={isPopup}
@@ -56,7 +65,6 @@ TiledViewer.propTypes = {
      * The ID used to identify this component in Dash callbacks.
      */
     id: PropTypes.string,
-
     /**
      * The class name for the background.
      */
@@ -65,6 +73,22 @@ TiledViewer.propTypes = {
      * Whether to close the viewer on select.
      */
     closeOnSelect: PropTypes.bool,
+    /**
+     * The API key for the Tiled viewer.
+     */
+    apiKey: PropTypes.string,
+    /**
+     * The bearer token for the Tiled viewer.
+     */
+    bearerToken: PropTypes.string,
+    /**
+     * Whether to use button mode.
+     */
+    isButtonMode: PropTypes.bool,
+    /**
+     * The text for the button mode.
+     */
+    buttonModeText: PropTypes.string,
     /**
      * The class name for the content.
      */

@@ -1,6 +1,7 @@
 {
   "name": "tiled_viewer",
-  "version": "0.0.1",
+  "sideEffects": false,
+  "version": "0.0.3",
   "description": "A viewer tool for Bluesky Tiled servers",
   "repository": {
     "type": "git",
@@ -24,7 +25,7 @@
   "author": "Seij De Leon <seijdeleon@lbl.gov>",
   "license": "BSD",
   "dependencies": {
-    "bluesky-web": "^0.2.18",
+    "@blueskyproject/finch": "^0.1.4",
     "ramda": "^0.26.1"
   },
   "devDependencies": {
@@ -49,6 +50,7 @@
     "style-loader": "^3.3.3",
     "styled-jsx": "^3.2.1",
     "webpack": "^5.84.1",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0"
   },

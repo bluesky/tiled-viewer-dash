@@ -6,6 +6,9 @@ app = Dash(__name__)
 app.layout = html.Div([
     tiled_viewer.TiledViewer(
         id='input',
+        tiledBaseUrl='http://127.0.0.1:8000/api/v1',
+        isPopup=True,
+        isButtonMode=True,
     ),
     html.Div(id='output')
 ])
