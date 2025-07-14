@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // import { Tiled } from 'bluesky-web';
 // import 'bluesky-web/style.css';
-import { Tiled } from '@blueskyproject/finch';
-import '@blueskyproject/finch/style.css';
+import { Tiled } from '@blueskyproject/tiled';
+import '@blueskyproject/tiled/style.css';
 /**
  * ExampleComponent is an example component.
  * It takes a property, `label`, and

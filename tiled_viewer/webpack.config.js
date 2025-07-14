@@ -112,7 +112,7 @@ module.exports = (env, argv) => {
                 filename: '[file].map',
                 exclude: ['async-plotlyjs']
             }),
-            new BundleAnalyzerPlugin()
+            //new BundleAnalyzerPlugin()
         ]
     }
 };

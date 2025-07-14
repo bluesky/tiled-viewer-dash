@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class TiledViewer(Component):
@@ -16,8 +31,17 @@ Keyword arguments:
 - id (string; optional):
     The ID used to identify this component in Dash callbacks.
 
+- apiKey (string; optional):
+    The API key for the Tiled viewer.
+
 - backgroundClassName (string; optional):
     The class name for the background.
+
+- bearerToken (string; optional):
+    The bearer token for the Tiled viewer.
+
+- buttonModeText (string; optional):
+    The text for the button mode.
 
 - closeOnSelect (boolean; optional):
     Whether to close the viewer on select.
@@ -27,6 +51,12 @@ Keyword arguments:
 
 - enableStartupScreen (boolean; optional):
     Whether to enable the startup screen.
+
+- isButtonMode (boolean; optional):
+    Whether to use button mode.
+
+- isFullWidth (boolean; optional):
+    Whether to use full width of the parent element.
 
 - isPopup (boolean; optional):
     Whether the viewer is a popup.
@@ -46,11 +76,30 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'tiled_viewer'
     _type = 'TiledViewer'
-    @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, backgroundClassName=Component.UNDEFINED, closeOnSelect=Component.UNDEFINED, contentClassName=Component.UNDEFINED, enableStartupScreen=Component.UNDEFINED, isPopup=Component.UNDEFINED, selectedLinks=Component.UNDEFINED, singleColumnMode=Component.UNDEFINED, tiledBaseUrl=Component.UNDEFINED, size=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'backgroundClassName', 'closeOnSelect', 'contentClassName', 'enableStartupScreen', 'isPopup', 'selectedLinks', 'singleColumnMode', 'size', 'tiledBaseUrl']
+
+
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        backgroundClassName: typing.Optional[str] = None,
+        closeOnSelect: typing.Optional[bool] = None,
+        apiKey: typing.Optional[str] = None,
+        bearerToken: typing.Optional[str] = None,
+        isButtonMode: typing.Optional[bool] = None,
+        buttonModeText: typing.Optional[str] = None,
+        contentClassName: typing.Optional[str] = None,
+        enableStartupScreen: typing.Optional[bool] = None,
+        isPopup: typing.Optional[bool] = None,
+        selectedLinks: typing.Optional[typing.Any] = None,
+        singleColumnMode: typing.Optional[bool] = None,
+        tiledBaseUrl: typing.Optional[str] = None,
+        size: typing.Optional[str] = None,
+        isFullWidth: typing.Optional[bool] = None,
+        **kwargs
+    ):
+        self._prop_names = ['id', 'apiKey', 'backgroundClassName', 'bearerToken', 'buttonModeText', 'closeOnSelect', 'contentClassName', 'enableStartupScreen', 'isButtonMode', 'isFullWidth', 'isPopup', 'selectedLinks', 'singleColumnMode', 'size', 'tiledBaseUrl']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'backgroundClassName', 'closeOnSelect', 'contentClassName', 'enableStartupScreen', 'isPopup', 'selectedLinks', 'singleColumnMode', 'size', 'tiledBaseUrl']
+        self.available_properties = ['id', 'apiKey', 'backgroundClassName', 'bearerToken', 'buttonModeText', 'closeOnSelect', 'contentClassName', 'enableStartupScreen', 'isButtonMode', 'isFullWidth', 'isPopup', 'selectedLinks', 'singleColumnMode', 'size', 'tiledBaseUrl']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -58,3 +107,5 @@ Keyword arguments:
         args = {k: _locals[k] for k in _explicit_args}
 
         super(TiledViewer, self).__init__(**args)
+
+setattr(TiledViewer, "__init__", _explicitize_args(TiledViewer.__init__))

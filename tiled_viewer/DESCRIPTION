@@ -6,8 +6,8 @@ Depends: R (>= 3.0.2)
 Imports: 
 Suggests: 
 License: BSD + file LICENSE
-URL: https://github.com/als-computing/tiled-viewer
-BugReports: https://github.com/als-computing/tiled-viewer/issues
+URL: https://github.com/bluesky/tiled-viewer-dash
+BugReports: https://github.com/bluesky/tiled-viewer-dash/issues
 Encoding: UTF-8
 LazyData: true
 KeepSource: true
